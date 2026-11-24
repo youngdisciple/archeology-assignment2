@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Artifacts Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script type="module" src="./js/artifacts.js"></script>
+</head>
+<body>
+    <div class="container py-5">
+        <h1 class="mb-4">Artifacts</h1>
+
+        <div class="mb-4">
+            <h2 id="filters-heading" class="h4">Search artifacts</h2>
+            <form id="artifact-filters" class="row g-3">
+                <div class="col-md-4">
+                    <label for="artifact-name" class="form-label">Artifact name</label>
+                    <input type="text" id="artifact-name" name="artifact_name" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label for="artifact-type" class="form-label">Artifact type</label>
+                    <input type="text" id="artifact-type" name="artifact_type" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label for="artifact-condition" class="form-label">Condition</label>
+                    <select id="artifact-condition" name="condition" class="form-select">
+                        <option value="">Any</option>
+                        <option value="mint">Mint</option>
+                        <option value="excellent">Excellent</option>
+                        <option value="good">Good</option>
+                        <option value="fair">Fair</option>
+                        <option value="poor">Poor</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </div>
+            </form>
+        </div>
+
+        <div id="artifact-errors" class="alert alert-danger d-none" role="alert">
+            <ul id="artifact-error-list" class="mb-0"></ul>
+        </div>
+
+        <div>
+            <h2 id="results-heading" class="h4">Results</h2>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <caption>Artifact search results</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Estimated value</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Museum ID</th>
+                            <th scope="col">Condition</th>
+                            <th scope="col">Material</th>
+                            <th scope="col">Weight (g)</th>
+                            <th scope="col">Height (cm)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="artifact-results"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
